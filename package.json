@@ -1,0 +1,64 @@
+{
+  "author": {
+    "name": "Hutson Betts",
+    "email": "hutson@hyper-expanse.net",
+    "url": "https://github.com/hbetts"
+  },
+  "bin": {},
+  "bugs": "https://github.com/hbetts/winston-gulplog/issues",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "description": "A transport for winston that sends log messages to gulplog.",
+  "engines": {
+    "node": "^4.1.0 || ^0.12.0",
+    "npm": "^3.0.0 || ^2.1.9"
+  },
+  "files": [
+    "src/"
+  ],
+  "keywords": [
+  	"gulp",
+  	"gulplog",
+  	"logging",
+  	"winston"
+  ],
+  "license": "Apache-2.0",
+  "main": "./src/index.js",
+  "name": "winston-gulplog",
+  "release": {
+    "verifyConditions": []
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hbetts/winston-gulplog.git"
+  },
+  "scripts": {
+    "docs": "gulp docs",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "gulp"
+  },
+  "version": "1.0.0",
+  "dependencies": {
+    "gulplog": "^1.0.0",
+    "winston": "^2.1.1"
+  },
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "codecov": "^1.0.1",
+    "cz-conventional-changelog": "^1.1.4",
+    "del": "^2.0.2",
+    "gulp": "^3.4.0",
+    "gulp-istanbul": "^0.10.0",
+    "gulp-jscs": "^3.0.0",
+    "gulp-jsdoc3": "^0.1.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-watch": "^4.3.5",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.0.1",
+    "semantic-release": "^4.3.5"
+  }
+}
