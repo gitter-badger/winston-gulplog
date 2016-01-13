@@ -1,12 +1,23 @@
 'use strict';
 
-var GulplogLogger = require('./index');
-
 var expect = require('chai').expect;
+var proxyquire = require('proxyquire');
+var sinon = require('sinon');
+
+var GulplogLogger = proxyquire('./index.js', {
+  gulplog: {
+    warn: sinon.spy(),
+    info: sinon.spy(),
+    '@noCallThru': true,
+  },
+});
 
 describe('GulplogLogger', function() {
+  var gulplogLogger;
 
-  it('should be a function', function() {
-    expect(GulplogLogger).to.be.a('function');
+  it('has a default log level of info', function() {
+    gulplogLogger = new GulplogLogger();
+
+    expect(gulplogLogger.level).to.equal('info');
   });
 });
