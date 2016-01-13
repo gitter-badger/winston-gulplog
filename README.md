@@ -13,7 +13,7 @@
 To install `winston-gulplog` from npm, run:
 
 ```bash
-npm install --global winston-gulplog
+npm install --save winston-gulplog
 ```
 
 ## Usage
