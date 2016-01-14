@@ -61,6 +61,7 @@
     "jshint-stylish": "^2.0.1",
     "proxyquire": "^1.7.3",
     "semantic-release": "^4.3.5",
-    "sinon": "^1.17.2"
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0"
   }
 }
