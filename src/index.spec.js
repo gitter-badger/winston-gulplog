@@ -38,10 +38,11 @@ describe('GulplogLogger', function() {
 
     gulplogLogger.log('warn', 'test message', {}, callback);
 
-    expect(gulplog.warn).to.have.been.calledOnce;
+    expect(gulplog.warn).to.have.been.calledOnce
+      .and.to.have.been.calledWithExactly('test message');
     expect(gulplog.info).to.not.have.been.called;
     expect(callback).to.have.been.calledOnce
-      .and.to.be.calledWithExactly(null, true);
+      .and.to.have.been.calledWithExactly(null, true);
   });
 
   it('defaults to info if invalid log level provided', function() {
@@ -51,8 +52,9 @@ describe('GulplogLogger', function() {
     gulplogLogger.log('invalid', 'test message', {}, callback);
 
     expect(gulplog.warn).to.not.have.been.called;
-    expect(gulplog.info).to.have.been.calledOnce;
+    expect(gulplog.info).to.have.been.calledOnce
+      .and.to.have.been.calledWithExactly('test message');
     expect(callback).to.have.been.calledOnce
-      .and.to.be.calledWithExactly(null, true);
+      .and.to.have.been.calledWithExactly(null, true);
   });
 });
