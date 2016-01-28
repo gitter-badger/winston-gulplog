@@ -19,10 +19,10 @@ var GulplogLogger = proxyquire('./index.js', {
   gulplog: gulplog,
 });
 
-describe('GulplogLogger', function() {
+describe('GulplogLogger', function () {
   var logger;
 
-  beforeEach(function() {
+  beforeEach(function () {
     logger = new winston.Logger({
       transports: [
         new GulplogLogger(),
@@ -30,14 +30,14 @@ describe('GulplogLogger', function() {
     });
   });
 
-  it('logs sent to gulplog', function() {
+  it('logs sent to gulplog', function () {
     logger.warn('test message');
 
     expect(gulplog.warn).to.have.been.calledOnce
       .and.to.have.been.calledWithExactly('test message');
   });
 
-  it('does not send metadata to gulplog', function() {
+  it('does not send metadata to gulplog', function () {
     logger.info('test message', { something: 'value' });
 
     expect(gulplog.info).to.have.been.calledOnce

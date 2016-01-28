@@ -18,21 +18,21 @@ var GulplogLogger = proxyquire('./index.js', {
   gulplog: gulplog,
 });
 
-describe('GulplogLogger', function() {
+describe('GulplogLogger', function () {
   var gulplogLogger;
 
-  beforeEach(function() {
+  beforeEach(function () {
     gulplog.warn.reset();
     gulplog.info.reset();
   });
 
-  it('has a default log level of info', function() {
+  it('has a default log level of info', function () {
     gulplogLogger = new GulplogLogger();
 
     expect(gulplogLogger.level).to.equal('info');
   });
 
-  it('logs to `gulplog`', function() {
+  it('logs to `gulplog`', function () {
     var callback = sinon.spy();
     gulplogLogger = new GulplogLogger();
 
@@ -45,7 +45,7 @@ describe('GulplogLogger', function() {
       .and.to.have.been.calledWithExactly(null, true);
   });
 
-  it('defaults to info if invalid log level provided', function() {
+  it('defaults to info if invalid log level provided', function () {
     var callback = sinon.spy();
     gulplogLogger = new GulplogLogger();
 

@@ -27,7 +27,7 @@ var paths = {
 /*
  * Clean up coverage directory.
  */
-gulp.task('clean:coverage', function() {
+gulp.task('clean:coverage', function () {
   var del = require('del');
 
   return del([
@@ -38,7 +38,7 @@ gulp.task('clean:coverage', function() {
 /*
  * Clean up docs directory.
  */
-gulp.task('clean:docs', function() {
+gulp.task('clean:docs', function () {
   var del = require('del');
 
   return del([
@@ -49,14 +49,14 @@ gulp.task('clean:docs', function() {
 /*
  * Execute unit and integration tests and generate a coverage reports.
  */
-gulp.task('test', ['clean:coverage'], function(done) {
+gulp.task('test', ['clean:coverage'], function (done) {
   var istanbul = require('gulp-istanbul');
   var mocha    = require('gulp-mocha');
 
   gulp.src(paths.sourceFiles)
     .pipe(istanbul({ includeUntested: true }))
     .pipe(istanbul.hookRequire())
-    .on('finish', function() {
+    .on('finish', function () {
       gulp.src(paths.testFiles)
         .pipe(mocha({
           reporter: ['progress'],
@@ -72,7 +72,7 @@ gulp.task('test', ['clean:coverage'], function(done) {
 /*
  * Run source files through JSCS style checks.
  */
-gulp.task('jscs', function() {
+gulp.task('jscs', function () {
   var jscs = require('gulp-jscs');
 
   return gulp.src(paths.lintFiles)
@@ -85,7 +85,7 @@ gulp.task('jscs', function() {
 /*
  * Generate source documentation.
  */
-gulp.task('docs', ['clean:docs'], function(done) {
+gulp.task('docs', ['clean:docs'], function (done) {
   var jsdoc = require('gulp-jsdoc3');
 
   gulp.src(paths.documentationFiles, { read: false })
@@ -96,7 +96,7 @@ gulp.task('docs', ['clean:docs'], function(done) {
 /*
  * Run source files through JSHint lint checks.
  */
-gulp.task('jshint', function() {
+gulp.task('jshint', function () {
   var jshint = require('gulp-jshint');
 
   return gulp.src(paths.lintFiles)
@@ -110,7 +110,7 @@ gulp.task('jshint', function() {
  * Watch for file changes to either source, or test, files, and execute the appropriate task(s) associated with the
  * changed file(s).
  */
-gulp.task('watch', function() {
+gulp.task('watch', function () {
   gulp.watch(paths.lintFiles, ['jshint', 'jscs']);
   gulp.watch(
     paths.sourceFiles.concat(paths.testFiles),
