@@ -19,6 +19,7 @@
   "files": [
     "src/"
   ],
+  "homepage": "https://github.com/hbetts/winston-gulplog#readme",
   "keywords": [
     "gulp",
     "gulplog",
@@ -26,11 +27,8 @@
     "winston"
   ],
   "license": "Apache-2.0",
-  "main": "./src/index.js",
+  "main": "src/index.js",
   "name": "winston-gulplog",
-  "release": {
-    "verifyConditions": []
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/hbetts/winston-gulplog.git"
