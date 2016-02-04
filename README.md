@@ -23,19 +23,19 @@ npm install --save winston-gulplog
 If you already have a winston logger instance, you can add the `winston-gulplog` transport like so:
 
 ```javascript
-var GulplogLogger = require('winston-gulplog');
+var Gulplog = require('winston-gulplog');
 
-logger.add(new GulplogLogger());
+logger.add(new Gulplog());
 ```
 
 It can also be added at the time a new winston logger is instantiated:
 
 ```javascript
-var GulplogLogger = require('winston-gulplog');
+var Gulplog = require('winston-gulplog');
 
 var logger = new winston.Logger({
   transports: [
-    new GulplogLogger()
+    new Gulplog()
   ]
 });
 ```

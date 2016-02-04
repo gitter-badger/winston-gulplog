@@ -15,19 +15,23 @@ var gulplog = {
   '@noCallThru': true,
 };
 
-var GulplogLogger = proxyquire('./index.js', {
+var Gulplog = proxyquire('./index.js', {
   gulplog: gulplog,
 });
 
-describe('GulplogLogger', function () {
+describe('Gulplog', function () {
   var logger;
 
   beforeEach(function () {
     logger = new winston.Logger({
       transports: [
-        new GulplogLogger(),
+        new Gulplog(),
       ],
     });
+  });
+
+  it('logger available through transport interface', function () {
+    expect(winston.transports.Gulplog).to.be.a('function');
   });
 
   it('logs sent to gulplog', function () {

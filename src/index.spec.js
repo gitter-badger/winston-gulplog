@@ -14,11 +14,11 @@ var gulplog = {
   '@noCallThru': true,
 };
 
-var GulplogLogger = proxyquire('./index.js', {
+var Gulplog = proxyquire('./index.js', {
   gulplog: gulplog,
 });
 
-describe('GulplogLogger', function () {
+describe('Gulplog', function () {
   var gulplogLogger;
 
   beforeEach(function () {
@@ -27,14 +27,14 @@ describe('GulplogLogger', function () {
   });
 
   it('has a default log level of info', function () {
-    gulplogLogger = new GulplogLogger();
+    gulplogLogger = new Gulplog();
 
     expect(gulplogLogger.level).to.equal('info');
   });
 
   it('logs to `gulplog`', function () {
     var callback = sinon.spy();
-    gulplogLogger = new GulplogLogger();
+    gulplogLogger = new Gulplog();
 
     gulplogLogger.log('warn', 'test message', {}, callback);
 
@@ -47,7 +47,7 @@ describe('GulplogLogger', function () {
 
   it('defaults to info if invalid log level provided', function () {
     var callback = sinon.spy();
-    gulplogLogger = new GulplogLogger();
+    gulplogLogger = new Gulplog();
 
     gulplogLogger.log('invalid', 'test message', {}, callback);
 
