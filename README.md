@@ -40,6 +40,8 @@ var logger = new winston.Logger({
 });
 ```
 
+Now, when logging to your winston instance, any message sent to a log level will be sent to the same log level for `gulplog`. Please keep in mind that any metadata sent to your winston instance will **not** be sent to `gulplog`.
+
 ## Contributing
 
 Read [CONTRIBUTING](CONTRIBUTING.md).
