@@ -1,5 +1,7 @@
 # winston-gulplog
 
+[![Join the chat at https://gitter.im/hbetts/winston-gulplog](https://badges.gitter.im/hbetts/winston-gulplog.svg)](https://gitter.im/hbetts/winston-gulplog?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/hbetts/winston-gulplog.svg?branch=master)](https://travis-ci.org/hbetts/winston-gulplog)
 [![codecov.io](https://codecov.io/github/hbetts/winston-gulplog/coverage.svg?branch=master)](https://codecov.io/github/hbetts/winston-gulplog?branch=master)
 [![Dependency Status](https://david-dm.org/hbetts/winston-gulplog.svg)](https://david-dm.org/hbetts/winston-gulplog)
